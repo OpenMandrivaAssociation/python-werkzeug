@@ -52,3 +52,11 @@ popd
 %doc AUTHORS LICENSE PKG-INFO CHANGES
 %{python_sitelib}/*
 %doc docs/_build/html examples
+
+
+%changelog
+* Fri Aug 17 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.8.3-1
++ Revision: 815233
+- Import python-werkzeug package (based on fedora package)
+- Import python-werkzeug package (based on fedora package)
+
