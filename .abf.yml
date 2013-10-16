@@ -1,2 +1,4 @@
+removed_sources:
+  Werkzeug-0.8.3.tar.gz: e61fd2a1c7f7eef817cf8a6716c74bf426db9f57
 sources:
-  "Werkzeug-0.8.3.tar.gz": e61fd2a1c7f7eef817cf8a6716c74bf426db9f57
+  Werkzeug-0.9.4.tar.gz: a5e87944a7b607976ffea36849130b046b9a7fb9

@@ -1,13 +1,13 @@
 %global srcname Werkzeug
 
 Name:           python-werkzeug
-Version:        0.8.3
+Version:        0.9.4
 Release:        1
 Summary:        The Swiss Army knife of Python web development 
 Group:          Development/Python
 License:        BSD
 URL:            http://werkzeug.pocoo.org/
-Source0:        http://pypi.python.org/packages/source/W/Werkzeug/%{srcname}-%{version}.tar.gz
+Source0:        https://pypi.python.org/packages/source/W/Werkzeug/Werkzeug-%{version}.tar.gz
 BuildArch:      noarch
 BuildRequires:  python-sphinx
 %py_requires -d
@@ -50,7 +50,7 @@ popd
 
 %files
 %doc AUTHORS LICENSE PKG-INFO CHANGES
-%{python_sitelib}/*
+%{py_puresitedir}/*
 %doc docs/_build/html examples
 
 
@@ -59,4 +59,5 @@ popd
 + Revision: 815233
 - Import python-werkzeug package (based on fedora package)
 - Import python-werkzeug package (based on fedora package)
+
 
