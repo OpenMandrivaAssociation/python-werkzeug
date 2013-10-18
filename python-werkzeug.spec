@@ -10,7 +10,7 @@ URL:            http://werkzeug.pocoo.org/
 Source0:        https://pypi.python.org/packages/source/W/Werkzeug/Werkzeug-%{version}.tar.gz
 BuildArch:      noarch
 BuildRequires:  python-sphinx
-%py_requires -d
+BuildRequires:  python-devel
 
 %description
 Werkzeug
@@ -52,12 +52,5 @@ popd
 %doc AUTHORS LICENSE PKG-INFO CHANGES
 %{py_puresitedir}/*
 %doc docs/_build/html examples
-
-
-%changelog
-* Fri Aug 17 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.8.3-1
-+ Revision: 815233
-- Import python-werkzeug package (based on fedora package)
-- Import python-werkzeug package (based on fedora package)
 
 
