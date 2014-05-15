@@ -4,6 +4,7 @@ Name:           python-werkzeug
 Version:        0.9.4
 Release:        1
 Summary:        The Swiss Army knife of Python web development 
+
 Group:          Development/Python
 License:        BSD
 URL:            http://werkzeug.pocoo.org/
@@ -36,7 +37,7 @@ bulletin boards, etc.).
 %{__sed} -i '1d' werkzeug/testsuite/multipart/collect.py
 
 %build
-%{__python} setup.py build
+python setup.py build
 find examples/ -name '*.py' -executable | xargs chmod -x
 find examples/ -name '*.png' -executable | xargs chmod -x
 pushd docs
@@ -44,9 +45,9 @@ make html
 popd
 
 %install
-%{__python} setup.py install -O1 --skip-build --root %{buildroot}
-%{__rm} -rf docs/_build/html/.buildinfo
-%{__rm} -rf examples/cupoftee/db.pyc
+python setup.py install -O1 --skip-build --root %{buildroot}
+rm -rf docs/_build/html/.buildinfo
+rm -rf examples/cupoftee/db.pyc
 
 %files
 %doc AUTHORS LICENSE PKG-INFO CHANGES
