@@ -1,14 +1,14 @@
 %global srcname Werkzeug
 
 Name:           python-werkzeug
-Version:        0.9.4
+Version:        0.9.6
 Release:        1
 Summary:        The Swiss Army knife of Python web development 
 
 Group:          Development/Python
 License:        BSD
 URL:            http://werkzeug.pocoo.org/
-Source0:        https://pypi.python.org/packages/source/W/Werkzeug/Werkzeug-%{version}.tar.gz
+Source0:        http://pypi.python.org/packages/source/W/Werkzeug/Werkzeug-%{version}.tar.gz
 BuildArch:      noarch
 BuildRequires:  python-sphinx
 BuildRequires:  python-devel
@@ -53,5 +53,3 @@ rm -rf examples/cupoftee/db.pyc
 %doc AUTHORS LICENSE PKG-INFO CHANGES
 %{py_puresitedir}/*
 %doc docs/_build/html examples
-
-
