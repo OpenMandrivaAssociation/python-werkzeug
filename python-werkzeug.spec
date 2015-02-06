@@ -2,7 +2,7 @@
 
 Name:           python-werkzeug
 Version:        0.9.4
-Release:        1
+Release:        2
 Summary:        The Swiss Army knife of Python web development 
 
 Group:          Development/Python
