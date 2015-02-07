@@ -43,12 +43,15 @@ python setup.py build
 find examples/ -name '*.py' -executable | xargs chmod -x
 find examples/ -name '*.png' -executable | xargs chmod -x
 
-pushd docs
-make html
-popd
+
+
 
 %install
 python setup.py install -O1 --skip-build --root %{buildroot}
+export PYTHONPATH=%{buildroot}%{py3_puresitedir}
+%{__python} setup.py develop --install-dir %{buildroot}%{py3_puresitedir}
+make -C docs html
+
 rm -rf docs/_build/html/.buildinfo
 rm -rf examples/cupoftee/db.pyc
 
