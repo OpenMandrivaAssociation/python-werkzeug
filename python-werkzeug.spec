@@ -51,7 +51,7 @@ rm -rf examples/cupoftee/db.pyc
 
 %files
 %doc AUTHORS LICENSE PKG-INFO CHANGES
-%{py_puresitedir}/*
+%{py3_puresitedir}/*
 %doc docs/_build/html examples
 
 
