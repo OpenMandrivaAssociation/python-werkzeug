@@ -41,9 +41,10 @@ bulletin boards, etc.).
 python setup.py build
 find examples/ -name '*.py' -executable | xargs chmod -x
 find examples/ -name '*.png' -executable | xargs chmod -x
-pushd docs
-make html
-popd
+# Need to fix sphinx first
+#pushd docs
+#make html
+#popd
 
 %install
 python setup.py install -O1 --skip-build --root %{buildroot}
@@ -53,6 +54,6 @@ rm -rf examples/cupoftee/db.pyc
 %files
 %doc AUTHORS LICENSE PKG-INFO CHANGES
 %{py3_puresitedir}/*
-%doc docs/_build/html examples
+#%doc docs/_build/html examples
 
 
