@@ -12,6 +12,7 @@ Source0:        https://pypi.python.org/packages/source/W/Werkzeug/Werkzeug-%{ve
 BuildArch:      noarch
 BuildRequires:  python-sphinx
 BuildRequires:  python-devel
+BuildRequires:  graphviz
 
 %description
 Werkzeug
