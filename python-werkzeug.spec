@@ -1,8 +1,8 @@
 %global srcname Werkzeug
 
 Name:           python-werkzeug
-Version:        0.9.4
-Release:        2
+Version:        0.9.6
+Release:        1
 Summary:        The Swiss Army knife of Python web development 
 
 Group:          Development/Python
@@ -36,15 +36,16 @@ bulletin boards, etc.).
 %setup -q -n %{srcname}-%{version}
 %{__sed} -i 's/\r//' LICENSE
 %{__sed} -i '1d' werkzeug/testsuite/multipart/collect.py
+find %{py3dir} -name '*.py' | xargs sed -i '1s|^#!python|#!%{__python3}|'
 
 %build
 python setup.py build
 find examples/ -name '*.py' -executable | xargs chmod -x
 find examples/ -name '*.png' -executable | xargs chmod -x
-# Need to fix sphinx first
-#pushd docs
-#make html
-#popd
+
+pushd docs
+make html
+popd
 
 %install
 python setup.py install -O1 --skip-build --root %{buildroot}
@@ -54,6 +55,6 @@ rm -rf examples/cupoftee/db.pyc
 %files
 %doc AUTHORS LICENSE PKG-INFO CHANGES
 %{py3_puresitedir}/*
-#%doc docs/_build/html examples
+%doc docs/_build/html examples
 
 
