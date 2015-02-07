@@ -12,6 +12,7 @@ Source0:        https://pypi.python.org/packages/source/W/Werkzeug/Werkzeug-%{ve
 BuildArch:      noarch
 BuildRequires:  python-sphinx
 BuildRequires:  python-devel
+BuildRequires:  python-setuptools
 BuildRequires:  graphviz
 
 %description
@@ -48,8 +49,8 @@ find examples/ -name '*.png' -executable | xargs chmod -x
 
 %install
 python setup.py install -O1 --skip-build --root %{buildroot}
-export PYTHONPATH=%{buildroot}%{py3_puresitedir}
-%{__python} setup.py develop --install-dir %{buildroot}%{py3_puresitedir}
+export PYTHONPATH=%{buildroot}%{python_sitelib}
+%{__python} setup.py develop --install-dir %{buildroot}%{python_sitelib}
 make -C docs html
 
 rm -rf docs/_build/html/.buildinfo
@@ -57,7 +58,7 @@ rm -rf examples/cupoftee/db.pyc
 
 %files
 %doc AUTHORS LICENSE PKG-INFO CHANGES
-%{py3_puresitedir}/*
+%{python_sitelib}/*
 %doc docs/_build/html examples
 
 
