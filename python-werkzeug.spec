@@ -36,7 +36,7 @@ bulletin boards, etc.).
 %setup -q -n %{srcname}-%{version}
 %{__sed} -i 's/\r//' LICENSE
 %{__sed} -i '1d' werkzeug/testsuite/multipart/collect.py
-find %{py3dir} -name '*.py' | xargs sed -i '1s|^#!python|#!%{__python3}|'
+find  -name '*.py' | xargs sed -i '1s|^#!python|#!%{__python3}|'
 
 %build
 python setup.py build
