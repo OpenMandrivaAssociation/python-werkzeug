@@ -1,7 +1,7 @@
 %global srcname Werkzeug
 
 Name:           python-werkzeug
-Version:        0.9.6
+Version:        0.10.4
 Release:        1
 Summary:        The Swiss Army knife of Python web development 
 
@@ -36,7 +36,6 @@ bulletin boards, etc.).
 %prep
 %setup -q -n %{srcname}-%{version}
 %{__sed} -i 's/\r//' LICENSE
-%{__sed} -i '1d' werkzeug/testsuite/multipart/collect.py
 find  -name '*.py' | xargs sed -i '1s|^#!python|#!%{__python3}|'
 
 %build
@@ -50,15 +49,16 @@ find examples/ -name '*.png' -executable | xargs chmod -x
 %install
 python setup.py install -O1 --skip-build --root %{buildroot}
 export PYTHONPATH=%{buildroot}%{python_sitelib}
-%{__python} setup.py develop --install-dir %{buildroot}%{python_sitelib}
-make -C docs html
+#%{__python} setup.py develop --install-dir %{buildroot}%{python_sitelib}
 
-rm -rf docs/_build/html/.buildinfo
-rm -rf examples/cupoftee/db.pyc
+#make -C docs html
+
+#rm -rf docs/_build/html/.buildinfo
+#rm -rf examples/cupoftee/db.pyc
 
 %files
 %doc AUTHORS LICENSE PKG-INFO CHANGES
 %{python_sitelib}/*
-%doc docs/_build/html examples
+%doc examples
 
 
