@@ -1,7 +1,7 @@
 %global srcname Werkzeug
 
 Name:           python-werkzeug
-Version:        0.11.11
+Version:        0.14.1
 Release:        1
 Summary:        The Swiss Army knife of Python web development 
 
@@ -88,11 +88,11 @@ pushd %py2dir
 python2 setup.py install -O1 --skip-build --root %{buildroot}
 
 %files
-%doc AUTHORS LICENSE PKG-INFO CHANGES
+%doc AUTHORS LICENSE 
 %{python_sitelib}/*
 %doc examples
 
 %files -n python2-werkzeug
-%doc AUTHORS LICENSE PKG-INFO CHANGES
+%doc AUTHORS LICENSE 
 %{python2_sitelib}/*
 %doc examples
