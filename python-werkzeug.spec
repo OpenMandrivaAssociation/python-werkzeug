@@ -59,7 +59,7 @@ bulletin boards, etc.).
 
 %prep
 %setup -q -n %{srcname}-%{version}
-%{__sed} -i 's/\r//' LICENSE
+%{__sed} -i 's/\r//' LICENSE.rst
 cp -a . %py2dir
 find  -name '*.py' | xargs sed -i '1s|^#!python|#!%{__python3}|'
 
@@ -88,11 +88,11 @@ pushd %py2dir
 python2 setup.py install -O1 --skip-build --root %{buildroot}
 
 %files
-%doc AUTHORS LICENSE 
+%doc AUTHORS LICENSE.rst 
 %{python_sitelib}/*
 %doc examples
 
 %files -n python2-werkzeug
-%doc AUTHORS LICENSE 
+%doc AUTHORS LICENSE.rst 
 %{python2_sitelib}/*
 %doc examples
