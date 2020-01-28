@@ -1,4 +1,2 @@
-removed_sources:
-  Werkzeug-0.11.11.tar.gz: 6fbff1f924144289ef362bd8950d7e484e6411d3
 sources:
-  Werkzeug-0.14.1.tar.gz: 42cc663e19bd964b2358ee6d129deebef3c604ea
+  Werkzeug-0.16.1.tar.gz: df85857118a45b0b9f3b95713d19d1df4fd0e8ae
