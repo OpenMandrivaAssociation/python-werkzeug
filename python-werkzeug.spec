@@ -88,11 +88,11 @@ pushd %py2dir
 python2 setup.py install -O1 --skip-build --root %{buildroot}
 
 %files
-%doc AUTHORS LICENSE.rst 
+%doc LICENSE.rst 
 %{python_sitelib}/*
 %doc examples
 
 %files -n python2-werkzeug
-%doc AUTHORS LICENSE.rst 
+%doc LICENSE.rst 
 %{python2_sitelib}/*
 %doc examples
