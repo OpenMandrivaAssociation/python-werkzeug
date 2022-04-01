@@ -42,8 +42,6 @@ bulletin boards, etc.).
 
 %build
 python setup.py build
-find examples/ -name '*.py' -executable | xargs chmod -x
-find examples/ -name '*.png' -executable | xargs chmod -x
 
 pushd 
 %install
