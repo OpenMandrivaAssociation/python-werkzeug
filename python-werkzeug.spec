@@ -56,6 +56,7 @@ export PYTHONPATH=%{buildroot}%{python_sitelib}
 
 %files
 %doc LICENSE.rst 
-#{python_sitelib}/*
+%{python_sitelib}/Werkzeug-%{version}-py*.*.egg-info
+%{python_sitelib}/werkzeug/
 %doc examples
 
