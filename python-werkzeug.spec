@@ -43,7 +43,6 @@ bulletin boards, etc.).
 %build
 python setup.py build
 
-pushd 
 %install
 python setup.py install -O1 --skip-build --root %{buildroot}
 export PYTHONPATH=%{buildroot}%{python_sitelib}
