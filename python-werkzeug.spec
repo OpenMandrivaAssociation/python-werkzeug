@@ -1,7 +1,7 @@
 %global srcname Werkzeug
 
 Name:           python-werkzeug
-Version:        2.1.0
+Version:        2.2.2
 Release:        1
 Summary:        The Swiss Army knife of Python web development 
 
