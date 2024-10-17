@@ -7,7 +7,7 @@ Summary:        The Swiss Army knife of Python web development
 
 Group:          Development/Python
 License:        BSD
-URL:            http://werkzeug.pocoo.org/
+URL:            https://werkzeug.pocoo.org/
 Source0:        https://pypi.python.org/packages/source/W/Werkzeug/Werkzeug-%{version}.tar.gz
 BuildArch:      noarch
 BuildRequires:  python-sphinx
