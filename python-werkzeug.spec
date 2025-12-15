@@ -1,19 +1,24 @@
-%global srcname Werkzeug
+%global module werkzeug
 
 Name:           python-werkzeug
-Version:        2.2.2
-Release:        2
+Version:        3.1.4
+Release:        1
 Summary:        The Swiss Army knife of Python web development 
-
 Group:          Development/Python
-License:        BSD
-URL:            https://werkzeug.pocoo.org/
-Source0:        https://pypi.python.org/packages/source/W/Werkzeug/Werkzeug-%{version}.tar.gz
-BuildArch:      noarch
-BuildRequires:  python-sphinx
-BuildRequires:  python-devel
-BuildRequires:  python-setuptools
+License:        BSD-3-Clause
+URL:            https://github.com/pallets/werkzeug/
+Source0:        https://files.pythonhosted.org/packages/source/w/%{module}/%{module}-%{version}.tar.gz
+BuildSystem:	python
+BuildArch:		noarch
+
 BuildRequires:  graphviz
+BuildRequires:	pkgconfig
+BuildRequires:	pkgconfig(python)
+BuildRequires:	python%{pyver}dist(flit-core)
+BuildRequires:	python%{pyver}dist(markupsafe)
+BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:	python%{pyver}dist(setuptools)
+BuildRequires:	python%{pyver}dist(wheel)
 
 %description
 Werkzeug
@@ -34,29 +39,17 @@ on as many server environments as possible (such as blogs, wikis,
 bulletin boards, etc.).
 
 
-
 %prep
-%setup -q -n %{srcname}-%{version}
-%{__sed} -i 's/\r//' LICENSE.rst
-
+%autosetup -n %{module}-%{version} -p1
 
 %build
-python setup.py build
+%py_build
 
 %install
-python setup.py install -O1 --skip-build --root %{buildroot}
-export PYTHONPATH=%{buildroot}%{python_sitelib}
-#%{__python} setup.py develop --install-dir %{buildroot}%{python_sitelib}
-
-#make -C docs html
-
-#rm -rf docs/_build/html/.buildinfo
-#rm -rf examples/cupoftee/db.pyc
-
+%py_install
 
 %files
-%doc LICENSE.rst 
-%{python_sitelib}/Werkzeug-%{version}-py*.*.egg-info
-%{python_sitelib}/werkzeug/
-%doc examples
-
+%doc README.md examples
+%license LICENSE.txt
+%{python_sitelib}/%{module}
+%{python_sitelib}/%{module}-%{version}.dist-info
