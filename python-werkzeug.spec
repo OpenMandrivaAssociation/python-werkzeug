@@ -1,16 +1,15 @@
 %global module werkzeug
 
-Name:           python-werkzeug
-Version:        3.1.4
-Release:        1
-Summary:        The Swiss Army knife of Python web development 
-Group:          Development/Python
-License:        BSD-3-Clause
-URL:            https://github.com/pallets/werkzeug/
-Source0:        https://files.pythonhosted.org/packages/source/w/%{module}/%{module}-%{version}.tar.gz
+Name:		python-werkzeug
+Version:	3.1.5
+Release:	1
+Summary:	The Swiss Army knife of Python web development
+Group:		Development/Python
+License:	BSD-3-Clause
+URL:		https://github.com/pallets/werkzeug/
+Source0:	https://files.pythonhosted.org/packages/source/w/%{module}/%{module}-%{version}.tar.gz#/%{name}-%{version}.tar.gz
 BuildSystem:	python
 BuildArch:		noarch
-
 BuildRequires:  graphviz
 BuildRequires:	pkgconfig
 BuildRequires:	pkgconfig(python)
@@ -38,15 +37,9 @@ developer. It's most useful for end user applications which should work
 on as many server environments as possible (such as blogs, wikis,
 bulletin boards, etc.).
 
-
-%prep
-%autosetup -n %{module}-%{version} -p1
-
-%build
-%py_build
-
-%install
-%py_install
+%prep -a
+# remove executable bit from upstream's example png files
+chmod a-x examples/cupoftee/shared/{up,down}.png
 
 %files
 %doc README.md examples
