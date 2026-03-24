@@ -1,7 +1,7 @@
 %global module werkzeug
 
 Name:		python-werkzeug
-Version:	3.1.6
+Version:	3.1.7
 Release:	1
 Summary:	The Swiss Army knife of Python web development
 Group:		Development/Python
