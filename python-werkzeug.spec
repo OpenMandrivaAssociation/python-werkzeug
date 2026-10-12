@@ -2,7 +2,7 @@
 
 Name:		python-werkzeug
 Version:	3.1.8
-Release:	1
+Release:	2
 Summary:	The Swiss Army knife of Python web development
 Group:		Development/Python
 License:	BSD-3-Clause
